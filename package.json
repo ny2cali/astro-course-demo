@@ -9,7 +9,19 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/svelte": "^7.2.0",
     "@astrojs/ts-plugin": "^1.10.4",
-    "astro": "^5.14.0"
+    "@fontsource/cabin": "^5.2.8",
+    "@tailwindcss/vite": "^4.1.13",
+    "astro": "^5.14.0",
+    "date-fns": "^2.30.0",
+    "kwesforms": "^2.2.9",
+    "svelte": "^5.39.6",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19"
   }
 }

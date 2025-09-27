@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import PostList from "../components/PostList.astro";
+import Main from "../components/Main.astro";
+import H1 from "../components/H1.astro";
+import Pagination from "../components/Pagination.astro";
+import CategoryList from "../components/CategoryList.astro";
+
+const posts = (await getCollection("posts")).slice(0, 6);
+const allCategories = posts.flatMap(post => post.data.categories);
+const categories = Array.from(new Set(allCategories));
+---
+
+
+<Layout title="Blog - Rhythm Nation" description="A community blog for Music Producers and Enthusiasts">
+    <Main>
+        <H1>Rhythm Nation Blog</H1>            
+        <p class="text-zinc-900 text-2xl mb-24 max-sm:mb-14">
+            Welcome to the Rhythm Nation Blog, where we explore the latest trends in music, dance, and culture. Join us as we dive into the rhythm of the nation!
+        </p>
+        <div class="grid grid-cols-[auto_1fr] gap-x-14 gap-y-3 mb-16 max-lg:grid-cols-1">
+            <h2 class ="font-bold text-5xl text-teal-900">Tags</h2>
+            <CategoryList categories={categories} />
+        </div>
+        <div class="mb-12">
+                <Pagination nextURL="/blog/2" />
+        </div>
+        <PostList posts={posts} />
+        <div class="mb-36">
+                <Pagination nextURL="/blog/2" />
+        </div>
+    </Main>
+
+</Layout>

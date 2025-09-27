@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from "astro:content";
+type Props = {
+    post: CollectionEntry<"posts">;
+};
+
+const {post} = Astro.props;
+---
+
+
+
+<article class="grid grid-cols-2 gap-x-12 gap-y-5 mb-28 max-lg:mb-14 max-sm:grid-cols-1">
+    <div>
+    <a href={`/blog/${post.slug}`} class="block col-span-1 max-sm:col-span-1">
+        <img src={post.data.image} alt={post.data.title}
+            width={1024} height={1024 / 2}
+            class="rounded-2xl shadow-2xl mb-6"
+        />
+        <h2>{post.data.title}</h2>
+    
+    </a>
+    <p class="text-zinc-500 text-2xl mb-9 line-clamp-3 max-xl:line-clamp-2">
+        {post.body}
+    </p>
+    </div>
+</article>
+
