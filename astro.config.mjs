@@ -8,10 +8,10 @@ import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
 export default defineConfig({
-  vite: {
-      plugins: [tailwindcss()],
-  },
+    vite: {
+        plugins: [tailwindcss()],
+    },
 
-  site: "https://example.com",
-  integrations: [svelte()],
+    site: "https://rad-donut-b2e780.netlify.app",
+    integrations: [svelte()],
 });
